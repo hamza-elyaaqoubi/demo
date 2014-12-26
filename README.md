@@ -2,6 +2,10 @@ Goal
 ===
 To be coming soon
 
+contributors
+===========
+[hamzaCM]
+
 Pré-requis
 =========
 
@@ -17,7 +21,7 @@ Pré-requis
 Installation
 =========
 
-https://github.com/hamzaCM/demo.git
+git clone https://github.com/hamzaCM/demo.git
 
 Screenshots
 =========
@@ -30,3 +34,7 @@ To be coming soon
 License
 =========
 Public
+
+
+
+[hamzaCM]:https://github.com/hamzaCM
