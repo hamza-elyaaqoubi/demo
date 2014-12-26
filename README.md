@@ -1,9 +1,17 @@
-demo
-====
-Spring 3 application demo
+Pré-requis
 
-Features
-========
-- Integration of spring security
-- Create an authentification plugin
-- bootstrap 3 template
+- Maven
+- Spring
+- - Spring security
+- Hibernate
+- JPA persistance
+- bootstrap 3
+- Apache Tomcat
+- Intellij idea 13.x
+
+Installation
+
+https://github.com/hamzaCM/demo.git
+License
+
+Public
