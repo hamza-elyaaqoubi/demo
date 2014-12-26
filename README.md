@@ -1,9 +1,12 @@
+Goal
+===
+
 Pré-requis
 =========
 
-- Maven
-- Spring
-- - Spring security
+- Maven 3
+- Spring 3
+- Spring security
 - Hibernate
 - JPA persistance
 - bootstrap 3
@@ -14,6 +17,12 @@ Installation
 =========
 
 https://github.com/hamzaCM/demo.git
+
+Screenshots
+=========
+
+Features
+=======
 
 License
 =========
