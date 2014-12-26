@@ -1,4 +1,5 @@
 Pré-requis
+=========
 
 - Maven
 - Spring
@@ -10,8 +11,10 @@ Pré-requis
 - Intellij idea 13.x
 
 Installation
+=========
 
 https://github.com/hamzaCM/demo.git
-License
 
+License
+=========
 Public
