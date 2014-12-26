@@ -1,5 +1,6 @@
 Goal
 ===
+To be coming soon
 
 Pré-requis
 =========
@@ -20,9 +21,11 @@ https://github.com/hamzaCM/demo.git
 
 Screenshots
 =========
+To be coming soon
 
 Features
 =======
+To be coming soon
 
 License
 =========
