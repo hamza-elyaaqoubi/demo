@@ -21,6 +21,7 @@ Pré-requis
 - Spring security
 - Hibernate
 - JPA persistance
+- Apache tiles
 - bootstrap 3
 - Apache Tomcat
 - Intellij idea 13.x
