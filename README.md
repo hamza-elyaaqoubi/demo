@@ -1,6 +1,6 @@
 Goal
 ===
-To be coming soon
+The objectif of this projet is to create a web site that integrate different concepts using java/j2ee frameworks
 
 contributors
 ===========
@@ -29,7 +29,7 @@ To be coming soon
 
 Features
 =======
-To be coming soon
+- Integrate a single page application
 
 License
 =========
