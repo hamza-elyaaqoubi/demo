@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
+
+<tilesx:useAttribute name="current" />
 
 <div class="navbar navbar-default">
     <div class="container-fluid">
@@ -14,15 +17,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="<spring:url value="/"/>">Home</a></li>
-                <li><a href="<spring:url value="/login"/>">Login</a></li>
-                <li><a href="<spring:url value="/"/>">New Account</a></li>
+                <li class="${current == 'index' ? 'active' : ''}"><a href="<spring:url value="/"/>">Home</a></li>
+                <li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login"/>">Login</a></li>
+                <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a></li>
+                <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users"/>">Users</a></li>
                 <li><a href="<spring:url value="/"/>">About</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                <li><a href="#/">Static top</a></li>
-                <li><a href="#/">Fixed top</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

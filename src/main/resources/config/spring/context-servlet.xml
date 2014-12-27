@@ -26,16 +26,6 @@
         <property name="order" value="0"/>
     </bean>
 
-    <!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
-        <property name="order" value="1"/>
-    </bean>
-
-    <!-- Forwards requests for "/" resource to the "welcome" view -->
-    <mvc:view-controller path="/" view-name="index"/>
-
     <!-- Exposition of statics resources-->
     <mvc:resources mapping="/resources/**" location="/resources/" />
 
