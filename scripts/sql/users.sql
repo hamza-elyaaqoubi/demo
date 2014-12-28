@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   username VARCHAR(45) NOT NULL ,
   password VARCHAR(45) NOT NULL ,
   enabled TINYINT NOT NULL DEFAULT 1 ,
-  PRIMARY KEY (user_id));
+  PRIMARY KEY (user_id))
+  ENGINE = InnoDB;
 
 -- insertion
 INSERT INTO users(username,password,enabled)

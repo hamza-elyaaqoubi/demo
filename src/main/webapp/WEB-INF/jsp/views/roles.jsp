@@ -8,7 +8,6 @@
     <tr>
         <th>Role Id</th>
         <th>Role name</th>
-        <th>User Id</th>
     </tr>
     </thead>
     <tbody>
@@ -18,10 +17,9 @@
                     ${role.id}
             </td>
             <td>
+                <a href="<spring:url value='/roles/${role.id}' />">
                     ${role.name}
-            </td>
-            <td>
-                    ${role.userId}
+                </a>
             </td>
         </tr>
     </c:forEach>

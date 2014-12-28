@@ -21,7 +21,7 @@ public class User {
     private int enabled;
 
     @ManyToMany
-    @JoinTable
+    @JoinTable(joinColumns = @JoinColumn(name="user_id"), inverseJoinColumns=@JoinColumn(name="role_id"))
     private List<Role> roles;
 
     public User(String username, String password) {

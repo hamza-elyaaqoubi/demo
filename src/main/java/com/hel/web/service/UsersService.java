@@ -27,9 +27,10 @@ public class UsersService {
         return userDao.findOne(id);
     }
 
+    @Transactional
     public User findUserByRole(int id) {
         User user = findUserById(id);
-        List<Role> roles = roleDao.findByUser(user.getId());
+        List<Role> roles = roleDao.findByUser(user);
         user.setRoles(roles);
         return user;
     }

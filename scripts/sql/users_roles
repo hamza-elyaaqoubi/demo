@@ -1,0 +1,12 @@
+-- create users table
+CREATE TABLE IF NOT EXISTS `users_roles` (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  user_id INT(11) NOT NULL ,
+  role_id INT(11) NOT NULL ,
+  PRIMARY KEY (id),
+  UNIQUE KEY uni_users_roles_key (user_id,role_id)
+  CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (user_id),
+  CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES roles (role_id),
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+  )ENGINE = InnoDB;

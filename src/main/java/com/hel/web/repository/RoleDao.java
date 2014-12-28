@@ -10,7 +10,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 public interface RoleDao extends JpaRepository<Role, Integer> {
-
-    @Query("select r from Role r where r.userId = :id")
-    List<Role> findByUser(@Param("id") Integer id);
+    List<Role> findByUser(User user);
 }
