@@ -9,24 +9,16 @@ public class Role {
 
     @Id
     @GeneratedValue
-    @Column(name = "role_id")
     private Integer id;
 
-    @Column(name = "role")
     private String name;
 
-    @Column(name = "user_id")
-    private Integer userId;
+    private String description;
 
     @ManyToMany(mappedBy = "roles")
     private List<User> user;
 
-    public Role(String name) {
-        this.name = name;
-    }
-
-    public Role() {
-    }
+    public Role() {}
 
     public Integer getId() {
         return id;
@@ -36,12 +28,20 @@ public class Role {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public List<User> getUser() {
@@ -50,13 +50,5 @@ public class Role {
 
     public void setUser(List<User> user) {
         this.user = user;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

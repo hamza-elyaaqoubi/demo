@@ -11,18 +11,17 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${roles}" var="role">
-        <tr>
-            <td>
+        <c:forEach items="${roles}" var="role">
+            <tr>
+                <td>
                     ${role.id}
-            </td>
-            <td>
-                <a href="<spring:url value='/roles/${role.id}' />">
-                    ${role.name}
-                </a>
-            </td>
-        </tr>
-    </c:forEach>
-
+                </td>
+                <td>
+                    <a href="<spring:url value='/roles/${role.id}' />">
+                        ${role.name}
+                    </a>
+                </td>
+            </tr>
+        </c:forEach>
     </tbody>
 </table>

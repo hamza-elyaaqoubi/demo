@@ -1,29 +1,29 @@
 package com.hel.web.controller;
 
-import com.hel.web.repository.UserDao;
-import com.hel.web.service.UsersService;
+import com.hel.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class UsersController {
+@RequestMapping("/users")
+public class UserController {
 
     @Autowired
-    private UsersService usersService;
+    private UserService usersService;
 
-    @RequestMapping("/users")
-    public String loginPage(Model model) {
+    @RequestMapping(method = RequestMethod.GET)
+    public String getLogin(Model model) {
         model.addAttribute("users", usersService.findAllUsers());
         return "users";
     }
 
-    @RequestMapping("/users/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getDetails(Model model, @PathVariable Integer id) {
-        // model.addAttribute("user", usersService.findUserById(id));
-        model.addAttribute("userWithRoles", usersService.findUserByRole(id));
+        model.addAttribute("user", usersService.findUserByRole(id));
         return "user-detail";
     }
 }

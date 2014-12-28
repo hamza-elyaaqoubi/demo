@@ -8,30 +8,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UsersService {
+public class RoleService {
+    @Autowired
+    private RoleDao roleDao;
 
     @Autowired
     private UserDao userDao;
 
-    @Autowired
-    private RoleDao roleDao;
-
-    public List<User> findAllUsers() {
-        return userDao.findAll();
+    public List<Role> findAllRoles() {
+        return roleDao.findAll();
     }
 
-    public User findUserById(int id) {
-        return userDao.findOne(id);
+    public Role findRoleById(Integer id) {
+        return roleDao.findOne(id);
     }
 
     @Transactional
-    public User findUserByRole(int id) {
-        User user = findUserById(id);
-        List<Role> roles = roleDao.findByUser(user);
-        user.setRoles(roles);
-        return user;
+    public Role findUsersByRole(Integer id) {
+        Role role = findRoleById(id);
+        List<User> users = userDao.findByRoles(role);
+        role.setUser(users);
+        return role;
     }
 }
