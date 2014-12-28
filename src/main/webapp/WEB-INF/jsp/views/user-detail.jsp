@@ -1,3 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<h1>${user.username}</h1>
+<h1>${userWithRoles.username}</h1>
+
+
+<c:forEach items="${userWithRoles.roles}" var="role">
+    <p>${role.name}</p>
+</c:forEach>

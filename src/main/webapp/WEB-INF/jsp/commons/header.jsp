@@ -21,7 +21,7 @@
                 <li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login"/>">Login</a></li>
                 <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a></li>
                 <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users"/>">Users</a></li>
-                <li><a href="<spring:url value="/"/>">About</a></li>
+                <li class="${current == 'roles' ? 'active' : ''}"><a href="<spring:url value="/roles"/>">Roles</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

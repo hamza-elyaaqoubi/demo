@@ -9,7 +9,8 @@ public class User {
 
     @Id
     @GeneratedValue
-    private Integer user_id;
+    @Column(name = "user_id")
+    private Integer id;
 
     private String username;
 
@@ -20,6 +21,7 @@ public class User {
     private int enabled;
 
     @ManyToMany
+    @JoinTable
     private List<Role> roles;
 
     public User(String username, String password) {
@@ -28,6 +30,14 @@ public class User {
     }
 
     public User() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public List<Role> getRoles() {
@@ -60,14 +70,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
     }
 
     public int getEnabled() {

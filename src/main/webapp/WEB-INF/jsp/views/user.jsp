@@ -6,6 +6,7 @@
 <table class="table table-hover table-bordered table-striped">
     <thead>
         <tr>
+            <th>User Id</th>
             <th>User name</th>
             <th>Email</th>
             <th>Password</th>
@@ -15,7 +16,10 @@
         <c:forEach items="${users}" var="user">
             <tr>
                 <td>
-                    <a href="<spring:url value='/users/${user.username}' />">
+                    ${user.id}
+                </td>
+                <td>
+                    <a href="<spring:url value='/users/${user.id}' />">
                         ${user.username}
                     </a>
                 </td>

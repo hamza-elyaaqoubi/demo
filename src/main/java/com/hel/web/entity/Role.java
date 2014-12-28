@@ -9,42 +9,54 @@ public class Role {
 
     @Id
     @GeneratedValue
-    private Integer role_id;
+    @Column(name = "role_id")
+    private Integer id;
 
-    private String role;
+    @Column(name = "role")
+    private String name;
 
-    @ManyToMany
-    @JoinTable
-    private List<User> users;
+    @Column(name = "user_id")
+    private Integer userId;
 
-    public Role(String role) {
-        this.role = role;
+    @ManyToMany(mappedBy = "roles")
+    private List<User> user;
+
+    public Role(String name) {
+        this.name = name;
     }
 
     public Role() {
     }
 
-    public List<User> getUsers() {
-        return users;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getRole() {
-        return role;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getRole_id() {
-        return role_id;
+    public List<User> getUser() {
+        return user;
     }
 
-    public void setRole_id(Integer role_id) {
-        this.role_id = role_id;
+    public void setUser(List<User> user) {
+        this.user = user;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -1,6 +1,7 @@
 package com.hel.web.controller;
 
 import com.hel.web.repository.UserDao;
+import com.hel.web.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,17 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UsersController {
 
     @Autowired
-    private UserDao userDao;
+    private UsersService usersService;
 
     @RequestMapping("/users")
     public String loginPage(Model model) {
-        model.addAttribute("users", userDao.findAll());
+        model.addAttribute("users", usersService.findAllUsers());
         return "users";
     }
 
-    @RequestMapping("/users/{username}")
-    public String getDetails(Model model, @PathVariable String username) {
-        model.addAttribute("user", userDao.findOne(1));
+    @RequestMapping("/users/{id}")
+    public String getDetails(Model model, @PathVariable Integer id) {
+        // model.addAttribute("user", usersService.findUserById(id));
+        model.addAttribute("userWithRoles", usersService.findUserByRole(id));
         return "user-detail";
     }
 }
