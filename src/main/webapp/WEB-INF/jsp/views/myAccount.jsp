@@ -1,3 +1,3 @@
 <%@include file="../commons/includes.jsp"%>
 
-Home page
+MyAccount page

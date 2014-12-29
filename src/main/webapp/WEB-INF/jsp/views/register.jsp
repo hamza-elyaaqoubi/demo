@@ -1,6 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@include file="../commons/includes.jsp"%>
 
 <p>Create a new user</p>
 <form:form commandName="user" cssClass="form-horizontal">

@@ -30,11 +30,7 @@ public class RegisterController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String register(@ModelAttribute("user") User user) {
-        try {
-            userService.save(user);
-        } catch (JpaSystemException e) {
-            // TODO something in UserService directly
-        }
+        userService.save(user);
         return "register";
     }
 

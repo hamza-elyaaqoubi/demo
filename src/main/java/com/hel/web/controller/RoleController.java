@@ -24,6 +24,6 @@ public class RoleController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getUserByRole(Model model, @PathVariable Integer id) {
         model.addAttribute("role", rolesService.findUsersByRole(id));
-        return "role_users";
+        return "roleUsers";
     }
 }

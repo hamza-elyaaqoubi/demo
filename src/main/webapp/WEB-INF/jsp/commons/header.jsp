@@ -1,6 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
+<%@include file="includes.jsp"%>
 
 <tilesx:useAttribute name="current" />
 
@@ -20,8 +18,11 @@
                 <li class="${current == 'index' ? 'active' : ''}"><a href="<spring:url value="/"/>">Home</a></li>
                 <li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login"/>">Login</a></li>
                 <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a></li>
-                <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users"/>">Users</a></li>
-                <li class="${current == 'roles' ? 'active' : ''}"><a href="<spring:url value="/roles"/>">Roles</a></li>
+                <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users"/>">Manage user</a></li>
+                <li class="${current == 'roles' ? 'active' : ''}"><a href="<spring:url value="/roles"/>">Manage roles</a></li>
+                <li class="${current == 'myAccount' ? 'active' : ''}"><a href="<spring:url value="/myAccount"/>">My account</a></li>
+                <li class="${current == 'about' ? 'active' : ''}"><a href="<spring:url value="/about"/>">About</a></li>
+                <li class="${current == 'contact' ? 'active' : ''}"><a href="<spring:url value="/contact"/>">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

@@ -4,52 +4,79 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
+    <!-- Global definition-->
     <definition name="master" template="/WEB-INF/jsp/layout/master.jsp">
         <put-attribute name="header" value="/WEB-INF/jsp/commons/header.jsp" />
         <put-attribute name="footer" value="/WEB-INF/jsp/commons/footer.jsp" />
         <put-attribute name="head" value="/WEB-INF/jsp/commons/head.jsp" />
     </definition>
 
+    <!-- Home page -->
     <definition name="index" extends="master">
         <put-attribute name="title" value="Home page" />
         <put-attribute name="body" value="/WEB-INF/jsp/views/index.jsp" />
         <put-attribute name="current" value="index" cascade="true" />
     </definition>
 
+    <!-- Login page -->
     <definition name="login" extends="master">
         <put-attribute name="title" value="Login page" />
         <put-attribute name="body" value="/WEB-INF/jsp/views/login.jsp" />
         <put-attribute name="current" value="login" cascade="true" />
     </definition>
 
+    <!-- Users page -->
     <definition name="users" extends="master">
         <put-attribute name="title" value="Users page" />
         <put-attribute name="body" value="/WEB-INF/jsp/views/user.jsp" />
         <put-attribute name="current" value="users" cascade="true" />
     </definition>
 
+    <definition name="userDetail" extends="master">
+        <put-attribute name="title" value="!User Detail page" />
+        <put-attribute name="body" value="/WEB-INF/jsp/views/userDetail.jsp" />
+        <put-attribute name="current" value="users" cascade="true" />
+    </definition>
+
+    <!-- Register page -->
     <definition name="register" extends="master">
         <put-attribute name="title" value="Register page" />
         <put-attribute name="body" value="/WEB-INF/jsp/views/register.jsp" />
         <put-attribute name="current" value="register" cascade="true" />
     </definition>
 
-    <definition name="user-detail" extends="master">
-        <put-attribute name="title" value="!User Detail page" />
-        <put-attribute name="body" value="/WEB-INF/jsp/views/user-detail.jsp" />
-        <put-attribute name="current" value="users" cascade="true" />
-    </definition>
-
+    <!-- Roles page -->
     <definition name="roles" extends="master">
         <put-attribute name="title" value="Roles page" />
         <put-attribute name="body" value="/WEB-INF/jsp/views/roles.jsp" />
         <put-attribute name="current" value="roles" cascade="true" />
     </definition>
 
-    <definition name="role_users" extends="master">
+    <definition name="roleUsers" extends="master">
         <put-attribute name="title" value="Roles page" />
-        <put-attribute name="body" value="/WEB-INF/jsp/views/role-users.jsp" />
+        <put-attribute name="body" value="/WEB-INF/jsp/views/roleUsers.jsp" />
         <put-attribute name="current" value="roles" cascade="true" />
+    </definition>
+
+    <!-- MyAccount page -->
+    <definition name="myAccount" extends="master">
+        <put-attribute name="title" value="MyAccount page" />
+        <put-attribute name="body" value="/WEB-INF/jsp/views/myAccount.jsp" />
+        <put-attribute name="current" value="myAccount" cascade="true" />
+    </definition>
+
+    <!-- About page -->
+    <definition name="about" extends="master">
+        <put-attribute name="title" value="About page" />
+        <put-attribute name="body" value="/WEB-INF/jsp/views/about.jsp" />
+        <put-attribute name="current" value="about" cascade="true" />
+    </definition>
+
+    <!-- Contact page -->
+    <definition name="contact" extends="master">
+        <put-attribute name="title" value="Contact page" />
+        <put-attribute name="body" value="/WEB-INF/jsp/views/contact.jsp" />
+        <put-attribute name="current" value="contact" cascade="true" />
     </definition>
 
 </tiles-definitions>

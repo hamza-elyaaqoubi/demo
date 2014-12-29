@@ -24,7 +24,7 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getDetails(Model model, @PathVariable Integer id) {
         model.addAttribute("user", usersService.findUserByRole(id));
-        return "user-detail";
+        return "userDetail";
     }
 }
 
