@@ -45,4 +45,6 @@
     </bean>
 
     <jpa:repositories base-package="com.hel.web.repository" entity-manager-factory-ref="emf"/>
+
+    <import resource="spring-security.xml" />
 </beans>
