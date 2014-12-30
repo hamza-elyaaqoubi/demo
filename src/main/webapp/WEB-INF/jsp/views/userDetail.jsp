@@ -1,4 +1,4 @@
-<%@include file="../commons/includes.jsp"%>
+<%@include file="../commons/tags.jsp"%>
 
 <p>
     The user

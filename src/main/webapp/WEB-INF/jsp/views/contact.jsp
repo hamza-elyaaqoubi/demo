@@ -1,3 +1,5 @@
-<%@include file="../commons/includes.jsp"%>
+<%@include file="../commons/tags.jsp"%>
 
-Contact page
+<div class="container">
+    Contact page
+</div>

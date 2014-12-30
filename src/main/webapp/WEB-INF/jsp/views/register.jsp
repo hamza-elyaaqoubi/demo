@@ -2,41 +2,55 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<p class="text-center">Create a new user</p>
-<div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <div class="panel-title">Sign Up</div>
-        </div>
-        <div class="panel-body">
-            <form:form commandName="user" cssClass="form-horizontal" role="form">
-                <div class="form-group">
-                    <label for="name" class="col-md-3 control-label">Name</label>
-                    <div class="col-sm-9">
-                        <form:input id="name" path="name" cssClass="form-control"/>
-                    </div>
+<div class="container">
+    <!-- === END HEADER === -->
+    <!-- === BEGIN CONTENT === -->
+    <div class="row margin-vert-30">
+        <!-- Register Box -->
+        <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+            <form:form commandName="user" cssClass="signup-page" role="form">
+                <div class="signup-header">
+                    <h2>Register a new account</h2>
+                    <p>Already a member? Click
+                        <a class="color-green" href="#">HERE</a> to login to your account.</p>
                 </div>
 
-                <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
-                    <div class="col-sm-9">
-                        <form:input id="email" path="email" cssClass="form-control" />
+                <label>First Name</label>
+                <form:input id="name" path="name" cssClass="form-control margin-bottom-20"/>
+
+                <label>Email Address
+                    <span class="color-red">*</span>
+                </label>
+                <form:input id="email" path="email" cssClass="form-control margin-bottom-20" />
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Password
+                            <span class="color-red">*</span>
+                        </label>
+                        <form:password id="password" path="password" cssClass="form-control margin-bottom-20" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Confirm Password
+                            <span class="color-red">*</span>
+                        </label>
+                        <input type="password" class="form-control margin-bottom-20">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                        <form:password id="password" path="password" cssClass="form-control" />
+                <hr>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <label class="checkbox">
+                            <input type="checkbox">I read the
+                            <a href="#">Terms and Conditions</a>
+                        </label>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-3 col-md-9">
-                        <button id="btn-signup" type="submit" class="btn btn-success"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                    <div class="col-lg-4 text-right">
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
                     </div>
                 </div>
             </form:form>
         </div>
+        <!-- End Register Box -->
     </div>
 </div>

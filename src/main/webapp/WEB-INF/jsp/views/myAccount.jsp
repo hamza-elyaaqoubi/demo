@@ -1,3 +1,5 @@
-<%@include file="../commons/includes.jsp"%>
+<%@include file="../commons/tags.jsp"%>
 
-MyAccount page
+<div class="container">
+    MyAccount page
+</div>

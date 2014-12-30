@@ -1,20 +1,43 @@
-<%@include file="../commons/includes.jsp"%>
+<%@include file="../commons/tags.jsp"%>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><tiles:getAsString name="title"/></title>
+
         <tiles:insertAttribute name="head" />
     </head>
     <body>
-        <div class="container">
-            <tiles:insertAttribute name="header" />
+        <div id="body_bg">
+            <tiles:insertAttribute name="socialNetwork" />
 
-            <tiles:insertAttribute name="body" />
+            <div class="primary-container-group">
+                <!-- Background -->
+                <div class="primary-container-background">
+                    <div class="primary-container"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--End Background -->
 
-            <tiles:insertAttribute name="footer" />
+                <div class="primary-container">
+                    <tiles:insertAttribute name="header" />
+
+                    <tiles:insertAttribute name="body" />
+
+                    <tiles:insertAttribute name="footer" />
+                </div>
+
+                <div class="container padding-vert-30">
+                    <div class="row">
+                        <div id="copyright">
+                            <p>Copyright &copy; EL YAAQOUBI Hamza 2014. All right reserved. </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+        <%@include file="../commons/jsIncludes.jsp"%>
     </body>
 </html>

@@ -1,13 +1,26 @@
-<%@include file="includes.jsp"%>
+<%@include file="tags.jsp"%>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Meta -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/bootstrap.css"/>" rel="stylesheet">
+<!-- Template CSS -->
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/animate.css"/>" rel="stylesheet">
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/font-awesome.css"/>" rel="stylesheet">
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/nexus.css"/>" rel="stylesheet">
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/responsive.css"/>" rel="stylesheet">
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/custom.css"/>" rel="stylesheet">
 
-<!-- Custom Css -->
-<link href="<c:url value="/resources/css/demo.css"/>" rel="stylesheet">
+<!-- Google Fonts-->
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+
+
+
 
 
