@@ -27,7 +27,6 @@
                         <input type="password" name="j_password" class="form-control" placeholder="password">
                     </div>
 
-
                     <div class="row">
                         <div class="col-md-6">
                             <%--<label class="checkbox">

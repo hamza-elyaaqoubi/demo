@@ -80,4 +80,10 @@
         <put-attribute name="current" value="contact" cascade="true" />
     </definition>
 
+    <!-- Error page 404 Access Denied -->
+    <definition name="404" extends="master">
+        <put-attribute name="title" value="Error page" />
+        <put-attribute name="body" value="/WEB-INF/jsp/views/404.jsp" />
+        <put-attribute name="current" value="404" cascade="true" />
+    </definition>
 </tiles-definitions>

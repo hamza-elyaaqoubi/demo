@@ -12,7 +12,8 @@
                 <div class="signup-header">
                     <h2>Register a new account</h2>
                     <p>Already a member? Click
-                        <a class="color-green" href="#">HERE</a> to login to your account.</p>
+                        <a class="color-green" href="#">HERE</a> to login to your account.
+                    </p>
                 </div>
 
                 <label>First Name</label>

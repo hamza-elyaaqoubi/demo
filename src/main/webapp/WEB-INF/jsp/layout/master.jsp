@@ -30,7 +30,7 @@
                 <div class="container padding-vert-30">
                     <div class="row">
                         <div id="copyright">
-                            <p>Copyright &copy; EL YAAQOUBI Hamza 2014. All right reserved. </p>
+                            <p>Copyright &copy; EL YAAQOUBI Hamza 2015. All right reserved. </p>
                         </div>
                     </div>
                 </div>

@@ -20,13 +20,18 @@
             <div id="hornav" class="pull-right">
                 <ul id="hornavmenu" class="nav navbar-nav">
                     <li class="${current == 'index' ? 'active' : ''}"><a href="<spring:url value="/"/>">Home</a></li>
-                    <security:authorize access="! isAuthenticated()">
+                    <security:authorize access="!isAuthenticated()">
                         <li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login"/>">Login</a></li>
+                        <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a></li>
                     </security:authorize>
-                    <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a></li>
-                    <security:authorize access="isAuthenticated()">
-                        <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users"/>">Manage user</a></li>
-                        <li class="${current == 'roles' ? 'active' : ''}"><a href="<spring:url value="/roles"/>">Manage roles</a></li>
+                    <security:authorize access="isAuthenticated() && hasRole('ROLE_ADMIN')">
+                        <li>
+                            <span>Managing</span>
+                            <ul>
+                                <li><a href="<spring:url value="/users"/>">Users</a></li>
+                                <li><a href="<spring:url value="/roles"/>">Roles</a></li>
+                            </ul>
+                        </li>
                     </security:authorize>
                     <li class="${current == 'myAccount' ? 'active' : ''}"><a href="<spring:url value="/myAccount"/>">My account</a></li>
                     <li class="${current == 'about' ? 'active' : ''}"><a href="<spring:url value="/about"/>">About</a></li>
