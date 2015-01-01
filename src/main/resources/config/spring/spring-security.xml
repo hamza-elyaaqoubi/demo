@@ -8,10 +8,10 @@
            http://www.springframework.org/schema/security/spring-security.xsd">
 
     <http use-expressions="true">
-        <intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/users/ **" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/roles **" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/roles/ **" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/users**" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/users/ **" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/roles **" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/roles/ **" access="hasRole('ADMIN')" />
 
         <form-login login-page="/login"/>
 

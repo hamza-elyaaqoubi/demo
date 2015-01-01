@@ -24,7 +24,7 @@
                         <li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login"/>">Login</a></li>
                         <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a></li>
                     </security:authorize>
-                    <security:authorize access="isAuthenticated() && hasRole('ROLE_ADMIN')">
+                    <security:authorize access="isAuthenticated() && hasRole('ADMIN')">
                         <li>
                             <span>Managing</span>
                             <ul>
