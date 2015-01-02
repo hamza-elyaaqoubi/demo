@@ -1,9 +1,12 @@
 <%@include file="../commons/tags.jsp"%>
 
+<security:authentication property='principal.username' var="currentUser"/>
+<security:authorize access="isAuthenticated()" var="userAuhtentificated"/>
 
 <div class="container">
     <h1>Users</h1>
     <hr>
+
     <table class="table table-hover table-bordered table-striped">
         <thead>
             <tr>
@@ -15,41 +18,43 @@
         </thead>
         <tbody>
             <c:forEach items="${users}" var="user">
-                <tr>
-                    <td>
-                        <a href="<spring:url value='/users/${user.id}' />">
-                            ${user.firstName}
-                        </a>
-                    </td>
-                    <td>
-                        ${user.lastName}
-                    </td>
-                    <td>
-                        ${user.email}
-                    </td>
-                    <td>
-                        ${user.enabled}
-                    </td>
-                    <td>
-                        <c:choose>
-                            <c:when test="${user.enabled eq true}">
-                                <button type="button" class="btn btn-primary btn-default" data-toggle="modal" data-target="#enableDisableAccountModal">
-                                    Disable
-                                </button>
-                            </c:when>
-                            <c:otherwise>
-                                <button type="button" class="btn btn-primary btn-green" data-toggle="modal" data-target="#enableDisableAccountModal">
-                                    Enable
-                                </button>
-                            </c:otherwise>
-                        </c:choose>
-                    </td>
-                   <%-- <td>
-                        <a href="/users/delete/${user.id}" class="btn btn-primary btn-danger btn-delete" data-toggle="modal" data-target="#deleteAccountModal">
-                            Delete
-                        </a>
-                    </td>--%>
-                </tr>
+                <c:if test="${userAuhtentificated && (user.email ne currentUser)}">
+                    <tr>
+                        <td>
+                            <a href="<spring:url value='/users/${user.id}' />">
+                                ${user.firstName}
+                            </a>
+                        </td>
+                        <td>
+                            ${user.lastName}
+                        </td>
+                        <td>
+                            ${user.email}
+                        </td>
+                        <td>
+                            ${user.enabled}
+                        </td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${user.enabled eq true}">
+                                    <a href="/users/disable/${user.id}" class="btn btn-primary btn-default">
+                                        Disable
+                                    </a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="/users/enable/${user.id}" class="btn btn-primary btn-green">
+                                        Enable
+                                    </a>
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
+                       <td>
+                            <a href="/users/delete/${user.id}" class="btn btn-primary btn-danger">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                </c:if>
             </c:forEach>
 
         </tbody>
@@ -62,7 +67,6 @@
 
     <hr>
     <%@include file="addAccountModal.jsp"%>
-    <%@include file="deleteAccounttModal.jsp"%>
 </div>
 
 <%--<script type="text/javascript">

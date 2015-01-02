@@ -5,11 +5,13 @@ import com.hel.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.validation.Valid;
 import java.security.Principal;
 
 @Controller
@@ -45,7 +47,7 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String addNewUser(@ModelAttribute("user") User user) {
+    public String addNewUser(@Valid @ModelAttribute("user") User user) {
         userService.saveAndFlush(user);
         return "redirect:/users";
     }
@@ -55,5 +57,18 @@ public class UserController {
         userService.deleteUser(id);
         return "redirect:/users";
     }
+
+    @RequestMapping("/disable/{id}")
+    public String deleteAccount(@PathVariable int id) {
+        userService.disableAccount(id);
+        return "redirect:/users";
+    }
+
+    @RequestMapping("/enable/{id}")
+    public String enableAccount(@PathVariable int id) {
+        userService.enableAccount(id);
+        return "redirect:/users";
+    }
+
 }
 

@@ -1,6 +1,10 @@
 package com.hel.web.entity;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.URL;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -11,12 +15,17 @@ public class User {
     @GeneratedValue
     private Integer id;
 
+    @Size(min = 4, message = "FirstName must be at least 4 characters")
     private String firstName;
 
+    @Size(min = 4, message = "LastName must be at least 4 characters")
     private String lastName;
 
+    @Size(min = 1, message = "Passeword must be at least 1 character")
     private String password;
 
+    @Size(min = 5, message = "Email must be at least 5 characters")
+    @Email(message = "Email must be valid")
     private String email;
 
     private boolean enabled;

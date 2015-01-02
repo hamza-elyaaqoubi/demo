@@ -7,9 +7,12 @@ import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/register")
@@ -29,7 +32,10 @@ public class RegisterController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String register(@ModelAttribute("user") User user) {
+    public String register(@Valid @ModelAttribute("user") User user, BindingResult result) {
+        if (result.hasErrors()) {
+            return "register";
+        }
         userService.saveAndFlush(user);
         return "redirect:/register?success=true";
     }

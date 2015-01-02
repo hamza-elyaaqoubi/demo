@@ -28,6 +28,7 @@ public class UserService {
         return userDao.findOne(id);
     }
 
+    @Transactional
     public void saveAndFlush(User user) {
         user.setEnabled(true);
         // TODO Encrypt the user password
@@ -51,5 +52,17 @@ public class UserService {
 
     public void deleteUser(int id) {
         userDao.delete(id);
+    }
+
+    public void disableAccount(int id) {
+        User user = findUserById(id);
+        user.setEnabled(false);
+        userDao.saveAndFlush(user);
+    }
+
+    public void enableAccount(int id) {
+        User user = findUserById(id);
+        user.setEnabled(true);
+        userDao.saveAndFlush(user);
     }
 }

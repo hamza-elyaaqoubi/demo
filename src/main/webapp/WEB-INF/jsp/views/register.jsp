@@ -18,7 +18,7 @@
                     </p>
                 </blockquote>
             </c:if>
-            <form:form commandName="user" cssClass="signup-page" role="form">
+            <form:form commandName="user" cssClass="signup-page" role="form" method="post">
                 <div class="signup-header">
                     <h2>Register a new account</h2>
                     <p>Already a member? Click
@@ -27,28 +27,43 @@
                 </div>
 
                 <label>First Name</label>
-                <form:input id="name" path="firstName" cssClass="form-control margin-bottom-20"/>
+                <form:input id="firstName" path="firstName" cssClass="form-control"/>
+
+                <p class="dropcap" style="color: red; font-size: 0.8em;">
+                    <form:errors path="firstName" />
+                </p>
 
                 <label>Last Name</label>
-                <form:input id="name" path="lastName" cssClass="form-control margin-bottom-20"/>
+                <form:input id="lastName" path="lastName" cssClass="form-control"/>
+
+                <p class="dropcap" style="color: red; font-size: 0.8em;">
+                    <form:errors path="lastName" />
+                </p>
 
                 <label>Email Address
                     <span class="color-red">*</span>
                 </label>
-                <form:input id="email" path="email" cssClass="form-control margin-bottom-20" />
+                <form:input id="email" path="email" cssClass="form-control" />
+
+                <p class="dropcap" style="color: red; font-size: 0.8em;">
+                    <form:errors path="email" />
+                </p>
 
                 <div class="row">
                     <div class="col-sm-6">
                         <label>Password
                             <span class="color-red">*</span>
                         </label>
-                        <form:password id="password" path="password" cssClass="form-control margin-bottom-20" />
+                        <form:password id="password" path="password" cssClass="form-control" />
+                        <p class="dropcap" style="color: red; font-size: 0.8em;">
+                            <form:errors path="password" />
+                        </p>
                     </div>
                     <div class="col-sm-6">
                         <label>Confirm Password
                             <span class="color-red">*</span>
                         </label>
-                        <input type="password" class="form-control margin-bottom-20">
+                        <input type="password" class="form-control" />
                     </div>
                 </div>
                 <hr>
