@@ -30,8 +30,8 @@ public class RegisterController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String register(@ModelAttribute("user") User user) {
-        userService.save(user);
-        return "register";
+        userService.saveAndFlush(user);
+        return "redirect:/register?success=true";
     }
 
 }

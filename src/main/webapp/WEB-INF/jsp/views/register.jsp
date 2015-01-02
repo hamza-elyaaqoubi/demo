@@ -1,13 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container">
+
     <!-- === END HEADER === -->
     <!-- === BEGIN CONTENT === -->
     <div class="row margin-vert-30">
+
         <!-- Register Box -->
         <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+            <c:if test="${param.success eq true}">
+                <blockquote class="primary">
+                    <p>
+                        <em>Registration successful</em>
+                    </p>
+                </blockquote>
+            </c:if>
             <form:form commandName="user" cssClass="signup-page" role="form">
                 <div class="signup-header">
                     <h2>Register a new account</h2>
@@ -17,7 +27,10 @@
                 </div>
 
                 <label>First Name</label>
-                <form:input id="name" path="name" cssClass="form-control margin-bottom-20"/>
+                <form:input id="name" path="firstName" cssClass="form-control margin-bottom-20"/>
+
+                <label>Last Name</label>
+                <form:input id="name" path="lastName" cssClass="form-control margin-bottom-20"/>
 
                 <label>Email Address
                     <span class="color-red">*</span>

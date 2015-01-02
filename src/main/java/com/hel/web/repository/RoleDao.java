@@ -11,4 +11,6 @@ import java.util.List;
 
 public interface RoleDao extends JpaRepository<Role, Integer> {
     List<Role> findByUser(User user);
+
+    Role findByName(String name);
 }

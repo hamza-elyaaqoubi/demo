@@ -1,32 +1,38 @@
 <%@include file="../commons/tags.jsp"%>
 
-<p>
-    The user
-    <a href="<spring:url value='/users/${user.id}' />">
-        ${user.name}
-    </a>
-    has ${fn:length(user.roles)} role(s)
-</p>
+<div class="container">
+    <p>
+        The user
+        <a href="<spring:url value='/users/${user.id}' />">
+            ${user.firstName}
+        </a>
+        has ${fn:length(user.roles)} role(s)
+    </p>
 
-<table class="table table-hover table-bordered table-striped">
-    <thead>
-    <tr>
-        <th>Role Id</th>
-        <th>Role name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${user.roles}" var="role">
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
         <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Account enabled</th>
+            <th>Email</th>
+            <th>Roles names</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>${user.firstName}</td>
+            <td>${user.lastName}</td>
+            <td>${user.enabled}</td>
+            <td>${user.email}</td>
             <td>
-                ${role.id}
-            </td>
-            <td>
-                <a href="<spring:url value='/roles/${role.id}' />">
-                    ${role.name}
-                </a>
+                <c:forEach items="${user.roles}" var="role">
+                    <a href="<spring:url value='/roles/${role.id}' />">
+                            ${role.name}
+                    </a>&nbsp;
+                </c:forEach>
             </td>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

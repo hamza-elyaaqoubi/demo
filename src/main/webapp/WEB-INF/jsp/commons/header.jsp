@@ -12,7 +12,12 @@
     </div>
     <!-- End Logo -->
     <!-- Slogan -->
-    <p class="site-slogan">EL YAAQOUBI Hamza</p>
+    <security:authorize access="isAuthenticated()">
+        <p class="site-slogan">
+            <security:authentication property="principal.Username"/>
+        </p>
+    </security:authorize>
+
     <!-- End Slogan -->
     <!-- Top Menu -->
     <div class="row">
@@ -33,7 +38,9 @@
                             </ul>
                         </li>
                     </security:authorize>
-                    <li class="${current == 'myAccount' ? 'active' : ''}"><a href="<spring:url value="/myAccount"/>">My account</a></li>
+                    <security:authorize access="isAuthenticated()">
+                        <li class="${current == 'myAccount' ? 'active' : ''}"><a href="<spring:url value="/users/myAccount"/>">My account</a></li>
+                    </security:authorize>
                     <li class="${current == 'about' ? 'active' : ''}"><a href="<spring:url value="/about"/>">About</a></li>
                     <li class="${current == 'contact' ? 'active' : ''}"><a href="<spring:url value="/contact"/>">Contact</a></li>
                     <security:authorize access="isAuthenticated()">
