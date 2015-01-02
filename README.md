@@ -19,8 +19,9 @@ Pré-requis
 - Maven 3
 - Spring 3
 - Spring security
+- Sptring Data JPA
 - Hibernate
-- JPA persistance
+- Hibernate validator
 - Apache tiles
 - bootstrap 3
 - Apache Tomcat
